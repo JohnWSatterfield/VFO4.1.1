@@ -40,15 +40,15 @@
 
 //          The Preference section on Line 305-387 should allow you to run
 
-#define PREFERENCE JOHN      //PREFERENCE can be defined as CLINT MARK JOHN 
+#define PREFERENCE CLINT      //PREFERENCE can be defined as CLINT MARK JOHN NO_ONE
 
-#define BAND_TYPE DIGITAL     // BAND_TYPE is DIGITAL (PCF8574), ANALOG (resistor matrix) EXTVFO (External VFO)
+#define BAND_TYPE ANALOG     // BAND_TYPE is DIGITAL (PCF8574), ANALOG (resistor matrix) EXTVFO (External VFO)
 
 #define SI5351_DRV MCU   // SI5351 Driver can be ETHERKIT or MCU
 
 //----------- The following are Feature Choices - Comment out if not using-------
 
-#define CLOCK_OK              //comment out if no clock
+//#define CLOCK_OK              //comment out if no clock
 #define LOCK_OK               //comment out if no Lock
 //#define SHORT16_OK            //comment out if display normal length
 #define MEM_OK                //comment out if not using memory features
@@ -89,7 +89,7 @@
  * if MC_TYPE is set to S3TINY ESP32-S3-Tiny (not working) S3TINY1 uses rp2040 pinouts for S3-Zero
  */
 
-#define MC_TYPE R2040
+#define MC_TYPE WROVER
 
 //-----------------From this point forward you do not need to set anything
 //                 I suggest you use the Preference section on Line 305-387 
@@ -97,8 +97,8 @@
 /*
  *    Define the EncoderStep here
  */
-#define EStep 48          //  Encoder pulses needed to advance the clock 1 step 
-#define EncoderStep  24   //  Encoder pulses needed to advance the encoder 1 step
+#define EStep 24          //  Encoder pulses needed to advance the clock 1 step 
+#define EncoderStep  12   //  Encoder pulses needed to advance the encoder 1 step
 #define BANDDIV  820      //  DIV routine for analog resistor matrix normally set to 712
 
 /*--------------------------------------------------------
@@ -116,7 +116,7 @@
 ----------------------------------------------------------*/
 
 #define CORRECTION      0ULL        //tuned on 20m at 14.250 - 8605000 typically 116 x freq = correction change
-#define CORRECTION_MCU  2006         //tuned on 20m at 14.250 - 8605000 typically 2.881 x freq = correction change
+#define CORRECTION_MCU    0         //tuned on 20m at 14.250 - 8605000 typically 2.881 x freq = correction change
                                     // change line 245 of VFO4.2.1.ino to actual CORRECTION_MCU to change to new value
 #define CRYSTAL       25000000      // use 27000000 for QRP Labs (27MHz crystal) or 0 for generic module (25 MHz crystal)
 #define CRYSTAL_MCU   25000000      // use 27000000 for QRP Labs or 25000000 for generic module
@@ -181,7 +181,7 @@
  *  screen size. The fonts used on the splash screen also vary with the screen size.
  */
 
-#define DISP_SIZE LARGE_DISP      // SMALL_DISP  CUSTOM_DISP  LARGE_DISP
+#define DISP_SIZE CUSTOM_DISP      // SMALL_DISP  CUSTOM_DISP  LARGE_DISP
 
 /*
  * There are three choices for the crystal filter for the Atlas Radio
